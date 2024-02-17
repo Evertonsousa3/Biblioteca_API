@@ -1,18 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose');
 
-
 const app = express()
 app.use(express.json())
-const port = 8080
-mongoose.connect('mongodb+srv://evertonsousa3557:nY7msN9ebxdmt7oC@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority');
 
 const Book = mongoose.model('Book', { 
     title: String,
     author: String,
     description: String, 
 });
-
 
 app.get('/', async (req, res) => {
     const books = await Book.find()
@@ -45,7 +41,10 @@ app.post('/', async (req, res) => {
     return res.send(book)
 })
 
+require("./connectdb.")
+
+const port = process.env.PORT || 3000
+
 app.listen(port, () => {
-    mongoose.connect('mongodb+srv://evertonsousa3557:nY7msN9ebxdmt7oC@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority');
-    console.log(`App running`)
+    console.log('App running')
 })
