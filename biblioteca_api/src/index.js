@@ -41,7 +41,7 @@ app.post('/', async (req, res) => {
     return res.send(book)
 })
 
-require("./connectdb.")
+require("./connectdb")
 
 const port = process.env.PORT || 3000
 
