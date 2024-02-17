@@ -7,7 +7,6 @@ mongoose.set("strictQuery", true);
 async function main() {
     
     await mongoose.connect(`mongodb+srv://evertonsousa3557:xnyfPrjP6sNnLWSM@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority`);
-
     console.log('Conectado ao banco!');
     
 }
