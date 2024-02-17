@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express()
 app.use(express.json())
-const port = 3000
+const port = 8080
 mongoose.connect('mongodb+srv://evertonsousa3557:nY7msN9ebxdmt7oC@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority');
 
 const Book = mongoose.model('Book', { 
