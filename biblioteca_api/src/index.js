@@ -1,11 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const cors = require("cors")
 const app = express()
 
-app.use(cors())
 app.use(express.json())
-
 
 const Book = mongoose.model('Book', { 
     title: String,
@@ -15,12 +12,12 @@ const Book = mongoose.model('Book', {
 
 app.get('/books/:id?', async (req, res) => {
     const books = await Book.find()
-    return res.send(books)
+    return res.send(books);
 })
   
 app.delete('/books/:id', async (req, res) =>{
     const book = await Book.findByIdAndDelete(req.params.id)
-    return res.send(book)
+    return res.send(book);
 })
 
 app.put('/books/:id', async (req, res) => {
@@ -31,7 +28,7 @@ app.put('/books/:id', async (req, res) => {
     },{
         new:true
     })
-    return res.send(book)
+    return res.send(book);
 })
 
 app.post('/books', async (req, res) => {
@@ -40,8 +37,8 @@ app.post('/books', async (req, res) => {
         author:req.body.author,
         description:req.body.description
     })
-    await book.save()
-    return res.send(book)
+    await book.save();
+    return res.send(book);
 })
 
 
