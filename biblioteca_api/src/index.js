@@ -1,8 +1,11 @@
-const express = require('express')
-const mongoose = require('mongoose');
-
+const express = require("express")
+const mongoose = require("mongoose")
+const cors = require("cors")
 const app = express()
+
+app.use(cors())
 app.use(express.json())
+
 
 const Book = mongoose.model('Book', { 
     title: String,
@@ -41,10 +44,10 @@ app.post('/', async (req, res) => {
     return res.send(book)
 })
 
-require("./connectdb")
 
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
     console.log('App running')
+    mongoose.connect('mongodb+srv://evertonsousa3557:BuEcTRTM8nwlthrO@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority');
 })
