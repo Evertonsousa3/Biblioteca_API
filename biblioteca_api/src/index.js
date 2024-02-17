@@ -2,9 +2,9 @@ const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
 
+
 app.use(express.json())
-const cors = require("cors")
-app.use(cors())
+require("dotenv").config();
 
 const Book = mongoose.model('Book', { 
     title: String,
@@ -12,7 +12,7 @@ const Book = mongoose.model('Book', {
     description: String, 
 });
 
-app.get('/books/:id?', async (req, res) => {
+app.get('/books', async (req, res) => {
     const books = await Book.find()
     return res.send(books);
 })
@@ -43,10 +43,10 @@ app.post('/books', async (req, res) => {
     return res.send(book);
 })
 
+require("./connectdb")
 
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
     console.log('App running')
-    mongoose.connect('mongodb+srv://evertonsousa3557:BuEcTRTM8nwlthrO@bibliotecaapi.aafwbke.mongodb.net/?retryWrites=true&w=majority');
 })
