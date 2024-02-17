@@ -13,7 +13,7 @@ Este sistema é uma interface de programação de aplicativos (API) desenvolvida
 - MongoDB (com Mongoose)
 - Render
 
-## URL API: 
+## URL API: https://biblioteca-api-qbux.onrender.com/
 
 ## Endpoints
 
