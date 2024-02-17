@@ -13,17 +13,17 @@ const Book = mongoose.model('Book', {
     description: String, 
 });
 
-app.get('/', async (req, res) => {
+app.get('/books/:id', async (req, res) => {
     const books = await Book.find()
     return res.send(books)
 })
   
-app.delete('/:id', async (req, res) =>{
+app.delete('/books/:id', async (req, res) =>{
     const book = await Book.findByIdAndDelete(req.params.id)
     return res.send(book)
 })
 
-app.put('/:id', async (req, res) => {
+app.put('/books/:id', async (req, res) => {
     const book = await Book.findByIdAndUpdate(req.params.id, {
         title:req.body.title,
         author:req.body.author,
@@ -34,7 +34,7 @@ app.put('/:id', async (req, res) => {
     return res.send(book)
 })
 
-app.post('/', async (req, res) => {
+app.post('/books', async (req, res) => {
     const book = new Book ({
         title:req.body.title,
         author:req.body.author,
