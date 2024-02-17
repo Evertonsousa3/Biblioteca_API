@@ -13,7 +13,7 @@ const Book = mongoose.model('Book', {
     description: String, 
 });
 
-app.get('/books/:id', async (req, res) => {
+app.get('/books/:id?', async (req, res) => {
     const books = await Book.find()
     return res.send(books)
 })
