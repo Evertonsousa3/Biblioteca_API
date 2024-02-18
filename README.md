@@ -41,7 +41,7 @@ Resposta:
 }
 ```
 
-### [GET] /films
+### [GET] /book
 
 Descrição: Retorna todos os livros cadastrados.
 
@@ -72,7 +72,7 @@ Resposta:
 ]
 ```
 
-### [GET] /films/{id}
+### [GET] /book/{id}
 
 Descrição: Retorna um livro de acordo com ID especificado.
 
@@ -88,7 +88,7 @@ Resposta:
 
 ```
 
-### [PUT] /film/{id}
+### [PUT] /book/{id}
 
 Descrição: Atualiza dados de um livro de acordo com ID especificado.
 
@@ -111,7 +111,7 @@ Resposta:
 }
 ```
 
-### [DELETE] /film/{id}
+### [DELETE] /book/{id}
 
 Descrição: Exclui um livro de acordo com ID especificado.
 
