@@ -1,5 +1,5 @@
 # Biblioteca_API
-# API de Filmes
+# API de uma Biblioteca
 
 ## Author
 [Everton Sousa Oliveira]
