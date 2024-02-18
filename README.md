@@ -13,11 +13,11 @@ Este sistema é uma interface de programação de aplicativos (API) desenvolvida
 - MongoDB (com Mongoose)
 - Render
 
-## URL API: https://biblioteca-api-qbux.onrender.com/
+## URL API: https://biblioteca-api-qbux.onrender.com/books
 
 ## Endpoints
 
-### [POST] /book
+### [POST] /books
 
 Descrição: Cadastra um novo livro.
 
@@ -41,7 +41,7 @@ Resposta:
 }
 ```
 
-### [GET] /book
+### [GET] /books
 
 Descrição: Retorna todos os livros cadastrados.
 
@@ -72,7 +72,7 @@ Resposta:
 ]
 ```
 
-### [GET] /book/{id}
+### [GET] /books/{id}
 
 Descrição: Retorna um livro de acordo com ID especificado.
 
@@ -88,7 +88,7 @@ Resposta:
 
 ```
 
-### [PUT] /book/{id}
+### [PUT] /books/{id}
 
 Descrição: Atualiza dados de um livro de acordo com ID especificado.
 
@@ -111,7 +111,7 @@ Resposta:
 }
 ```
 
-### [DELETE] /book/{id}
+### [DELETE] /books/{id}
 
 Descrição: Exclui um livro de acordo com ID especificado.
 
